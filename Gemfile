@@ -13,6 +13,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise'
 gem 'bootstrap-sass'
+gem 'geocoder'
+gem 'zip-codes'
 
 group :development, :test do
   gem 'byebug'
