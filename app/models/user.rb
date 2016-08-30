@@ -8,8 +8,8 @@ class User < ActiveRecord::Base
     validates :zip_code, presence: true
 
     geocoded_by :zip_code
-    
-    after_validation :geocode, if: ->(obj){ obj.full_address.present? and obj.address_changed? or obj.zip_code.present? and obj.zip_code_changed? }
+
+    after_validation :geocode, if: ->(obj){ obj.full_address.present? and obj.street_address_changed? or obj.zip_code.present? and obj.zip_code_changed? }
     after_create :associate_city_state_to_user
 
     def full_address
