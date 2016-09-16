@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Excursions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @excursions.each do |excursion| %>
+      <tr>
+        <td><%= link_to 'Show', excursion %></td>
+        <td><%= link_to 'Edit', edit_excursion_path(excursion) %></td>
+        <td><%= link_to 'Destroy', excursion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Excursion', new_excursion_path %>
